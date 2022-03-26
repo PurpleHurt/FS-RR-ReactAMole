@@ -1,4 +1,4 @@
-//represent a displayed mole.
+//This will represent a displayed mole. It ultimately will contain a timer determining the lifespan of a mole. This component will render when displayMole === true
 import React from 'react';
 
 
