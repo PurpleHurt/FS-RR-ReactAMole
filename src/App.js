@@ -1,16 +1,36 @@
+//App – Stores the score state variable
+//Will need a function to generate nine MoleContainers
+import { useState } from 'react'
 import MoleContainer from './components/MoleContainer'
-import Mole from './components/Mole'
-import EmptySlot from './components/EmptySlot'
-import './App.css';
 
-const [ScreenOrientation, setScore] = useState(0);
+function App(){
+    let [score, setScore] = useState(0)
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+    const createMoleHill = () => {
+        let hills = []
+        for (let i = 0; i < 9; i++) {
+            hills.push(
+                <MoleContainer
+                key={i}
+                setScore={setScore}
+                score={score} />
+            )
+        }
+    
+        return (
+            <div>
+                {hills}
+            </div>
+        )
+    }
+
+    return (
+        <div className="App">
+            <h1>React-a-Mole!</h1>
+            {score}
+            {createMoleHill()}
+        </div>
+    )
 }
 
-export default App;
+export default App
