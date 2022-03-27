@@ -1,11 +1,15 @@
 //App – Stores the score state variable
 //Will need a function to generate nine MoleContainers
-import { useState } from 'react'
-import MoleContainer from './components/MoleContainer'
+import './App.css';
+import { useState } from 'react';
+import MoleContainer from './components/MoleContainer';
+
+
+
 
 function App(){
     let [score, setScore] = useState(0)
-
+    
     const createMoleHill = () => {
         let hills = []
         for (let i = 0; i < 9; i++) {
