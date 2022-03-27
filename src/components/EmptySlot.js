@@ -6,12 +6,16 @@ import MoleHill from '../assets/images/molehill.png';
 function EmptySlot(props){
 
     useEffect(() => {
-        
+        let randSeconds = Math.ceil(Math.random() *5000)
+        let timer = setTimeout(() => {
+            props.toggle(true)
+        }, randSeconds)
+        return () => clearTimeout(timer)
     })
 
     return (
         <div className="mole-hill">
-            <img src={MoleHill} alt='Mole Hill Image' />
+            <img src={MoleHill} alt=""/>
         </div>
     )
 }

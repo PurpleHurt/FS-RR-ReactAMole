@@ -7,14 +7,14 @@ import Mole from './Mole'
 import EmptySlot from './EmptySlot'
 
 function MoleContainer(props){
-    let [theMole, toggleMole] = useState(false)
+    let [theMole, setTheMole] = useState(false)
 
     const handleClick = (e) => {
         props.setScore(props.score + 1)
-        toggleMole(false)
+        setTheMole(false)
     }
 
-    let displayMole = theMole ? <Mole /> : <EmptySlot />
+    let displayMole = theMole ? <Mole setScore={props.setScore} toggle={setTheMole} handleClick={handleClick}/> : <EmptySlot toggle={setTheMole}/>
 
     return (
         <div className="mole-container">
